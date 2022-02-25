@@ -1,0 +1,8 @@
+# Database
+data/raw/
+data/processed/
+
+dataset/
+model/
+
+data/
