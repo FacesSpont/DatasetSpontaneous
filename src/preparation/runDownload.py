@@ -19,10 +19,10 @@ import datetime
 
 # ========================================================
 ## Local de armazenamento das imagens geradas            #
-database_img = 'F:/FaceSpont/'                       #
+database_img = './dataset/'                       #
 # ========================================================
 
-database = 'data/'
+database = './data/'
 default_url = 'https://www.youtube.com/watch?v='
 
 def downloadVideo(id, movie):
@@ -39,20 +39,20 @@ def downloadVideo(id, movie):
         out = database_img + 'videos/original/' + movie
         
         urlopen(url)
-        
+            
         yt = YouTube(url)
         
         video = yt.streams.get_highest_resolution()    
         video.download(out)
-        
+
         os.rename(out + '/' + yt.streams.get_highest_resolution().default_filename, out + '/' + id + '.mp4')
         
         print('Video ' + id + ' baixado!')
+
         return 'Video ' + id + ' baixado!'
         
     except:
         pass
-            
     
     
 def format10fps(id, movie):
